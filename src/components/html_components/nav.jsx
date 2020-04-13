@@ -8,6 +8,7 @@ const NavBar = () => {
                 <a href = '#'>Messages</a>
                 <a href = '#'>News</a>
                 <a href = '#'>Music</a>
+                <a href = '#'>Settings</a>
  
         
         </div>
