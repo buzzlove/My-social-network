@@ -1,16 +1,16 @@
 import React from 'react';
 import style from './ProfileInfo.module.css'
+import Preloader from "../../Common/Preloader/preloader";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
 
 const ProfileInfo = (props) => {
+    if(!props.profile) {return <Preloader/>}
+
     return (
-        <div className = {style.main}>
-        <div>    <img src={require('./../../../../img/databg.jpg')}></img>
-        </div>
         <div className = {style.info}>
-            AVA+desription
-        </div>
+         <ProfileStatus {...props}/>
         </div>
     )
-}
+};
 
 export default ProfileInfo;

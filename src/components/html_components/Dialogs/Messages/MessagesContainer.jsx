@@ -1,21 +1,15 @@
-import React from "react";
-import {addEnterMessageTextActionCreator, addMassageActionCreator} from "../../../../Redux/dialogReducer";
+import {addMassage} from "../../../../Redux/dialogReducer";
 import Messages from "./Messages";
+import {connect} from "react-redux";
+import {WithAuthRedirect} from "../../HOC/WithAuthRedirect";
+import {compose} from "redux";
 
-const MessagesContainer = (props) => {
-   let state = props.store.getState().DialogsPage;
-let AddNewMessage = () => {props.store.dispatch(addMassageActionCreator());}
-let EnteringText = (text) => {props.store.dispatch(addEnterMessageTextActionCreator(text));}
-
-
-return (
-        <div>
-            <Messages MessagesOld={state.MessagesOld}
-                      AddNewMessage={AddNewMessage}
-                      EnteringText={EnteringText}
-                      MessageText={state.MessageText}/>
-        </div>
-    )
+let mapStateToProps = (state) => {
+    return {
+        DialogsPage: state.DialogsPage,
+        isAuth: state.auth.isAuth
+    }
 }
 
-export default MessagesContainer;
+export default compose(connect (mapStateToProps, {addMassage}),
+    WithAuthRedirect)(Messages);

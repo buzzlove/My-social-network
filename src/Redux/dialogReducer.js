@@ -1,5 +1,3 @@
-const addMessage = 'AddMessage';
-const addEnterMessage = 'AddEnterMessageText';
 let initialState = {
     MessagesOld: [
         {message: 'Привет', id: 0},
@@ -12,30 +10,21 @@ let initialState = {
         {name: 'Алексей', id: 'Алексей'},
         {name: 'Сергей', id: 'Сергей'},
         {name: 'Василий', id: 'Василий'},
-        {name: 'Света', id: 'Света'}],
-    MessageText: ''
+        {name: 'Света', id: 'Света'}]
 };
 
 const dialogReducer = (state = initialState, action) => {
-
     switch (action.type) {
         case 'AddMessage':
-            let newMessage = {
-                message: state.MessageText,
-                id: 2
+            return {
+                ...state,
+                MessagesOld: [...state.MessagesOld,
+                    {message: action.Message, id: 3}]
             };
-            state.MessagesOld.push(newMessage);
-            state.MessageText = "";
-            return state;
-        case 'AddEnterMessageText':
-            state.MessageText = action.text;
-            return state;
         default:
             return state;
     }
 }
-
-export const addMassageActionCreator = () => ({type: addMessage});
-export const addEnterMessageTextActionCreator = (text) => ({type: addEnterMessage, text: text});
+export const addMassage = (Message) => ({type: 'AddMessage', Message});
 
 export default dialogReducer;

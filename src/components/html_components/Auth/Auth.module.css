@@ -1,0 +1,9 @@
+.main {
+ grid-area: data;
+
+    background: #999999;
+}
+
+.main h4 {
+    margin: 10px 50px;
+}

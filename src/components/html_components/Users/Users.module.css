@@ -1,0 +1,12 @@
+.photo img{
+    width: 50px;
+}
+
+.selectedPage {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.loading {
+    width: 50px;
+}

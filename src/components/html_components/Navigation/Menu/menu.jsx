@@ -1,17 +1,19 @@
 import React from 'react';
-import classes from './../nav.module.css';
+import style from './../nav.module.css';
 import {NavLink} from "react-router-dom";
+import './../../../../App.css'
 
 const Menu = () => {
     return (
-        <div className= {classes.Menu}>
-        <div>
-                <NavLink to="/Профиль">Профиль</NavLink>
-                <NavLink to="/Сообщения">Сообщения</NavLink>
-                <NavLink to="/Новости">Новости</NavLink>
-                <NavLink to="/Музыка">Музыка</NavLink>
-                <NavLink to="/Настройки">Настройки</NavLink>
-        </div>
+        <div className={style.Menu}>
+
+                <NavLink to="/Профиль" activeStyle={{color: "blue"}}>Профиль</NavLink>
+                <NavLink to="/Сообщения" activeStyle={{color: "blue"}}>Сообщения</NavLink>
+                <NavLink to="/Новости" activeStyle={{color: "blue"}}>Новости</NavLink>
+                <NavLink to="/Музыка" activeStyle={{color: "blue"}}>Музыка</NavLink>
+                <NavLink to="/Пользователи" activeStyle={{color: "blue"}}>Пользователи</NavLink>
+                <NavLink to="/Setup" activeStyle={{color: "blue"}}>Настройки</NavLink>
+
             <div>
                 <h4>Друзья</h4>
             </div>

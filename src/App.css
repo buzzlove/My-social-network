@@ -3,8 +3,13 @@ display: grid;
 grid-template-areas: 
 "header header"
 "navbar data";
-grid-template-rows: 50px auto;
-grid-template-columns: 150px auto;
-grid-gap: 5px;
+grid-template-rows: 50px 500px;
+grid-template-columns: 200px 600px;
+grid-gap: 20px;
+
+}
+
+.active {
+    color: blue;
 }
    

@@ -1,13 +1,11 @@
-import React from 'react';
 import Users from "./Users";
+import {connect} from "react-redux";
 
-const UsersContainer = (props) => {
-let state = props.store.getState().DialogsPage;
-    return (
-        <div>
-            <Users User={state.User}/>
-        </div>
-    )
-}
+let mapStateToProps = (state) => {
+    return {
+        User: state.DialogsPage.User,
+        isAuth: state.auth.isAuth
+    }
+};
 
-export default UsersContainer;
+export default connect (mapStateToProps)(Users);

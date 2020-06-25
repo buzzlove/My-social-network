@@ -1,29 +1,25 @@
 import React from "react";
 import classes from "../dialogs.module.css";
-import {addEnterMessageTextActionCreator, addMassageActionCreator} from "../../../../Redux/dialogReducer";
+import {Redirect} from "react-router-dom";
+import ReduxMessagesForm from "../MessagesForm/MessagesForm";
 
 const Messages = (props) => {
 
-let NewMessagesData = props.MessagesOld.map (message => <p>{message.message}</p>);
-let AddText = React.createRef();
-let AddNewMessage = () => {props.AddNewMessage();}
-let EnteringText = () => {
-    let text = AddText.current.value;
-    props.EnteringText(text);
-}
+    let NewMessagesData = props.DialogsPage.MessagesOld.map(message => <p>{message.message}</p>);
+    const onSubmit = (formData) => {
+        props.addMassage(formData.AddMessage)
 
+    }
 
-return (
-        <div className ={classes.messages}>
-            <textarea id='textarea' placeholder='Введите сообщение' ref={AddText} value={props.MessageText} onChange={EnteringText}/>
-            <div>
-                <button onClick={AddNewMessage}>Добавить</button>
-            </div>
+    if (props.isAuth === false) return <Redirect to={'/Авторизация'}/>
+    return (
+        <div className={classes.messages}>
+            <ReduxMessagesForm onSubmit={onSubmit}/>
             <div className={classes.userList}>
                 {NewMessagesData}
             </div>
         </div>
     )
-}
+};
 
 export default Messages;
