@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/Social-network/static/css/main.de67b531.chunk.css",
+    "main.js": "/Social-network/static/js/main.16497ea8.chunk.js",
+    "main.js.map": "/Social-network/static/js/main.16497ea8.chunk.js.map",
+    "runtime-main.js": "/Social-network/static/js/runtime-main.e5de3293.js",
+    "runtime-main.js.map": "/Social-network/static/js/runtime-main.e5de3293.js.map",
+    "static/js/2.61e9531e.chunk.js": "/Social-network/static/js/2.61e9531e.chunk.js",
+    "static/js/2.61e9531e.chunk.js.map": "/Social-network/static/js/2.61e9531e.chunk.js.map",
+    "static/css/3.9131a3d6.chunk.css": "/Social-network/static/css/3.9131a3d6.chunk.css",
+    "static/js/3.87e6c6d4.chunk.js": "/Social-network/static/js/3.87e6c6d4.chunk.js",
+    "static/js/3.87e6c6d4.chunk.js.map": "/Social-network/static/js/3.87e6c6d4.chunk.js.map",
+    "static/css/4.1bcaffe3.chunk.css": "/Social-network/static/css/4.1bcaffe3.chunk.css",
+    "static/js/4.2e1c0163.chunk.js": "/Social-network/static/js/4.2e1c0163.chunk.js",
+    "static/js/4.2e1c0163.chunk.js.map": "/Social-network/static/js/4.2e1c0163.chunk.js.map",
+    "static/js/5.245284f5.chunk.js": "/Social-network/static/js/5.245284f5.chunk.js",
+    "static/js/5.245284f5.chunk.js.map": "/Social-network/static/js/5.245284f5.chunk.js.map",
+    "index.html": "/Social-network/index.html",
+    "precache-manifest.891460a784e180ef8a354d66d5f5da72.js": "/Social-network/precache-manifest.891460a784e180ef8a354d66d5f5da72.js",
+    "service-worker.js": "/Social-network/service-worker.js",
+    "static/css/3.9131a3d6.chunk.css.map": "/Social-network/static/css/3.9131a3d6.chunk.css.map",
+    "static/css/4.1bcaffe3.chunk.css.map": "/Social-network/static/css/4.1bcaffe3.chunk.css.map",
+    "static/css/main.de67b531.chunk.css.map": "/Social-network/static/css/main.de67b531.chunk.css.map",
+    "static/js/2.61e9531e.chunk.js.LICENSE.txt": "/Social-network/static/js/2.61e9531e.chunk.js.LICENSE.txt",
+    "static/media/loading.svg": "/Social-network/static/media/loading.7c78aac5.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e5de3293.js",
+    "static/js/2.61e9531e.chunk.js",
+    "static/css/main.de67b531.chunk.css",
+    "static/js/main.16497ea8.chunk.js"
+  ]
+}
