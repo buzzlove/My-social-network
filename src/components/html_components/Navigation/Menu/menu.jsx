@@ -3,21 +3,16 @@ import style from './../nav.module.css';
 import {NavLink} from "react-router-dom";
 import './../../../../App.css'
 
-const Menu = () => {
+const Menu = ({disLogin}) => {
     return (
         <div className={style.Menu}>
-
-                <NavLink to="/Профиль" activeStyle={{color: "blue"}}>Профиль</NavLink>
-                <NavLink to="/Сообщения" activeStyle={{color: "blue"}}>Сообщения</NavLink>
-                <NavLink to="/Новости" activeStyle={{color: "blue"}}>Новости</NavLink>
-                <NavLink to="/Музыка" activeStyle={{color: "blue"}}>Музыка</NavLink>
-                <NavLink to="/Пользователи" activeStyle={{color: "blue"}}>Пользователи</NavLink>
-                <NavLink to="/Setup" activeStyle={{color: "blue"}}>Настройки</NavLink>
-
-            <div>
-                <h4>Друзья</h4>
-            </div>
-        
+                <NavLink to="/Профиль"  activeClassName={style.activeLink}>Профиль</NavLink>
+                <NavLink to="/Сообщения" activeClassName={style.activeLink}>Сообщения</NavLink>
+                <NavLink to="/Новости" activeClassName={style.activeLink}>Новости</NavLink>
+                <NavLink to="/Музыка" activeClassName={style.activeLink}>Музыка</NavLink>
+                <NavLink to="/Пользователи" activeClassName={style.activeLink}>Пользователи</NavLink>
+                <NavLink to="/Настройки" activeClassName={style.activeLink}>Настройки</NavLink>
+                <NavLink to="/Авторизация" onClick={disLogin}>Выйти</NavLink>
         </div>
     )
 }

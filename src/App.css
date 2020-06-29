@@ -1,12 +1,13 @@
 .app-wrapper {
-display: grid;
-grid-template-areas: 
-"header header"
-"navbar data";
-grid-template-rows: 50px 500px;
-grid-template-columns: 200px 600px;
-grid-gap: 20px;
-
+    width: 800px;
+    margin:0 auto;
+    background-color: #F0EBEB;
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "navbar data";
+    grid-template-rows: 50px 700px;
+    grid-template-columns: 200px 600px;
 }
 
 .active {

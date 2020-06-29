@@ -5,7 +5,7 @@ import ReduxMessagesForm from "../MessagesForm/MessagesForm";
 
 const Messages = (props) => {
 
-    let NewMessagesData = props.DialogsPage.MessagesOld.map(message => <p>{message.message}</p>);
+    let NewMessagesData = props.DialogsPage.MessagesOld.map(message => <span>{message.message}</span>);
     const onSubmit = (formData) => {
         props.addMassage(formData.AddMessage)
 

@@ -1,6 +1,7 @@
 import React from "react";
 import userPhoto from "../../../Users/img/user.png";
 
+
 class ProfileStatus extends React.Component {
     state = {editMode: false, status: this.props.status}
     activateEditMode = () => {
@@ -20,7 +21,9 @@ class ProfileStatus extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         if(prevProps.status!== this.props.status) {
             this.setState({status: this.props.status})
+
         }
+
     }
 
     render() {
@@ -29,6 +32,9 @@ class ProfileStatus extends React.Component {
             <div>
                 <img src={this.props.profile.photos.large != null ?
                           this.props.profile.photos.large : userPhoto} alt='logo'/>
+            </div>
+            <div>
+                ID: {this.props.id}
             </div>
             <div>
                 Имя: {this.props.profile.fullName}

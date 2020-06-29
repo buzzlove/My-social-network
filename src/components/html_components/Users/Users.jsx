@@ -1,45 +1,32 @@
 import React from "react";
-import userPhoto from "./img/user.png";
-import style from "./Users.module.css";
-import {NavLink} from "react-router-dom";
+import Preloader from "../Common/Preloader/preloader";
+import User from "./User";
+import PaginationReact from "../Common/Pagination/PaginationReact";
 
-const Users = (props) => {
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-    let pages = [];
-    for (let i = 1; i <= 10; i++) {
-        pages.push(i);
-    }
-
-        return (
-    <div>
+const Users = ({isFetching, inProgress, follow, onPageChange, currentPage, pageSize, totalUsersCount, users}) => {
+    return (
+        <div>
             <div>
-                {pages.map(page => {
-                    return <button onClick={() => {props.onPageChange(page);}}
-                                   className={props.currentPage === page && style.selectedPage}>
-                        {page}</button>
-                })}
-               <span>...{pagesCount}</span>
+                <PaginationReact
+                    totalUsersCount={totalUsersCount}
+                    pageSize={pageSize}
+                    onPageChange={onPageChange}/>
             </div>
-            {props.users.map(users =>
-                <div key={users.id}>
-                    <div>{users.name}</div>
-                    <div className={style.photo}>
-                    <NavLink to={'/Профиль/' + users.id}>
-                        <img src={users.photos.small != null ? users.photos.small : userPhoto} alt='Лого'/>
-                    </NavLink>
-                    </div>
-                    <div>
-                        {users.followed
-                            ? <button disabled={props.inProgress.some(id => id === users.id)}
-                                      onClick={() => {props.unfollow(users.id)}}>Отписаться</button>
+            {isFetching ? <Preloader/>
+                :
+                users.map(users =>
+                          <User
+                              key={users.id}
+                              users={users}
+                              isFetching={isFetching}
+                              inProgress={inProgress}
+                              follow={follow}
+                              currentPage={currentPage}
+                              pageSize={pageSize}/>)
 
-                            : <button disabled={props.inProgress.some(id => id === users.id)}
-                                      onClick={() => {props.follow(users.id)}}>Подписаться</button>}
-                    </div>
-                    <div>{props.users.status}</div>
-                </div>)}
+            }
         </div>
-        )
-    }
+    )
+}
 
 export default Users;

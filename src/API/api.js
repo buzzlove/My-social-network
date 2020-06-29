@@ -9,27 +9,42 @@ const instance = axios.create({
 export const usersApi = {
     getUsers(currentPage = 1, pageSize = 10) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`,
-        ).then(response => response.data)},
-    getAuthMe() {return instance.get(`auth/me`).then(response => response.data)},
-    postFollow(usersId){return instance.post(`follow/${usersId}`)},
-    deleteFollow(usersId){return instance.delete(`follow/${usersId}`)},
-    apiGetProfileUser(userId){
-        console.warn('Устаревший метод. Используйте profileApi')
-        return profileApi.apiGetProfileUser(userId)}
+        ).then(response => response.data)
+    },
+    getAuthMe() {
+        return instance.get(`auth/me`).then(response => response.data)
+    },
+    postFollow(usersId) {
+        return instance.post(`follow/${usersId}`)
+    },
+    deleteFollow(usersId) {
+        return instance.delete(`follow/${usersId}`)
+    },
+    requestFriends(count = 15) {
+        return instance.get(`users?count=${count}&friend=true`,
+        ).then(response => response.data)
+    }
 
 }
 
 export const profileApi = {
-    apiGetProfileUser(userId){return instance.get(`profile/${userId}`)},
-    getStatus(userId){return instance.get(`profile/status/${userId}`)},
-    updateStatus(status){return instance.put('profile/status/', {status: status})}
+    apiGetProfileUser(userId) {
+        return instance.get(`profile/${userId}`)
+    },
+    getStatus(userId) {
+        return instance.get(`profile/status/${userId}`)
+    },
+    updateStatus(status) {
+        return instance.put('profile/status/', {status: status})
+    }
 }
 
 export const authApi = {
-    loginOn(email,password, rememberMe = false){
-        return instance.post('/auth/login', { email, password, rememberMe})},
-    loginOut(){return instance.delete('/auth/login')}
-
-
+    loginOn(email, password, rememberMe = false) {
+        return instance.post('/auth/login', {email, password, rememberMe})
+    },
+    loginOut() {
+        return instance.delete('/auth/login')
+    }
 }
 

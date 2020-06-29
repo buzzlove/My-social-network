@@ -1,6 +1,7 @@
 export const getUsersState = (state) => {
     return state.UsersPage.users
 }
+
 export const getPageSize = (state) => {
     return state.UsersPage.pageSize
 }
@@ -19,3 +20,4 @@ export const getInProgress = (state) => {
 export const getIsAuth = (state) => {
     return state.auth.isAuth
 }
+

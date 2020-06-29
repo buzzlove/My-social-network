@@ -1,0 +1,30 @@
+.photo img{
+    width: 50px;
+}
+
+.selectedPage {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.loading {
+    width: 50px;
+}
+
+.pagination li, a{
+    cursor: pointer;
+    width: 30px;
+    display: inline;
+    text-decoration: none;
+    outline: none;
+}
+
+.pagination li:hover{
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: none;
+}
