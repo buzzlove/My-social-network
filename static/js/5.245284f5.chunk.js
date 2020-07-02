@@ -1,2 +1,0 @@
-(this["webpackJsonp02-second-project"]=this["webpackJsonp02-second-project"]||[]).push([[5],{314:function(e,t,n){"use strict";n.r(t);var c=n(0),o=n.n(c),s=n(313);n(312);t.default=function(){return o.a.createElement("div",null,"\u041c\u0443\u0437\u044b\u043a\u0430",o.a.createElement(s.a,{autoPlay:!0,src:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"}))}}}]);
-//# sourceMappingURL=5.245284f5.chunk.js.map
